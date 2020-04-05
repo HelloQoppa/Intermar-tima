@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Intermaritima.ApplicationCore.Entity.Estabelecimento>
+
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<body>
+    <h3><a asp-action="Create" class="btn btn-sm btn-secondary">Create</a></h3>
+    <table class="table table-bordered table-sm table-striped">
+        <thead>
+            <tr>
+                <th>Id Estabelecimento</th>
+                <th>Conta Contabil</th>
+                <th>Centro De Custo</th>
+                <th>Historico Do Lancamento</th>
+                <th>Data Emissao</th>
+                <th>Serie</th>
+                <th>Especie</th>
+                <th>Titulo\</th>
+                <th>Cfop</th>
+                <th>Emitente</th>
+                <th>Nome</th>
+                <th>Requisicao</th>
+                <th>Seq</th>
+                <th>NumNF</th>
+                <th>CodItem</th>
+                <th>ValorDebito</th>
+                <th>ValorCredito</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model == null)
+            {
+                <tr><td colspan="12" class="text-center">Vazio</td></tr>
+            }
+            else
+            {
+                @foreach (var m in Model)
+                {
+                    <tr>
+                        <td>@m.IdEstabelecimento</td>
+                        <td>@m.CodItem</td>
+                        <td>@m.CentroDeCusto</td>
+                        <td>@m.HistoricoDoLancamento</td>
+                        <td>@m.DataEmissao</td>
+                        <td>@m.Serie</td>
+                        <td>@m.Especie</td>
+                        <td>@m.Titulo</td>
+                        <td>@m.Cfop</td>
+                        <td>@m.Emitente</td>
+                        <td>@m.Nome</td>
+                        <td>@m.Requisicao</td>
+                        <td>@m.Seq</td>
+                        <td>@m.NumNF</td>
+                        <td>@m.CodItem</td>
+                        <td>@m.ValorDebito</td>
+                        <td>@m.ValorCredito</td>
+                        <td>@m.Quantidade</td>
+                        <td><a asp-action="Update" asp-route-id="@m.IdEstabelecimento">Update</a></td>
+                        <td>
+                            <form asp-action="Delete" method="post" asp-route-id="@m.IdEstabelecimento">
+                                <button>Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <style>
+        .input-validation-error {
+            border-color: red;
+        }
+    </style>
+
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <form class="m-1 p-1" method="post">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <script src="/lib/jquery/dist/jquery.min.js"></script>
+    <script src="/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+</body>

@@ -1,0 +1,157 @@
+﻿@model Intermaritima.ApplicationCore.Entity.Estabelecimento
+@{
+    ViewData["Title"] = "Cadastro";
+}
+<h1>@ViewData["Title"]</h1>
+
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=submit] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Cadastro</h1>
+</div>
+
+<div>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <form asp-action="" method="post">
+        <div class="form-group">
+
+            <label asp-for="IdEstabelecimento">Codigo estabelecimento</label>
+            <input type="text" id="cod-estabel" name="cod-estabel" class="form-control" placeholder="Codigo estabelecimento">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="ContaContabil">Conta Contabil</label>
+            <input type="text" id="ct-codigo" name="ct-codigo" class="form-control" placeholder="Conta Contabil">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="CentroDeCusto">Centro De Custo</label>
+            <input type="text" id="centro-custo" name="centro-custo" class="form-control" placeholder="Centro De Custo">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="HistoricoDoLancamento">Historico Do Lancamento</label>
+            <input type="text" id="historico" name="historico" class="form-control" placeholder="Historico Do Lancamento">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="DataEmissao">Data de Emissao</label>
+            <input type="date" id="dt-emissao" name="dt-emissao" class="form-control" placeholder="Data de Emissao">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Serie">Serie</label>
+            <input type="text" id="serie-docto" name="serie-docto" class="form-control" placeholder="Serie">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Especie">Especie</label>
+            <input type="text" id="cod-esp" name="cod-esp" class="form-control" placeholder="Especie">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Titulo">Titulo</label>
+            <input type="text" id="nro-docto" name="nro-docto" class="form-control" placeholder="Titulo">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Cfop">Cfop</label>
+            <input type="text" id="nat-operacao" name="nat-operacao" class="form-control" placeholder="Cfop">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Emitente">Emitente</label>
+            <input type="text" id="cod-emitente" name="cod-emitente" class="form-control" placeholder="Emitente">
+
+        </div>
+        <div class="form-group">
+
+            <label asp-for="Nome">Nome</label>
+            <input type="text" id="nome-fornec" name="nome-asp-fornec" class="form-control" placeholder="Nome">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Requisicao">Requisicao</label>
+            <input type="text" id="nr-requisicao" name="nr-requisicao" class="form-control" placeholder="Requisicao">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Seq">Sequencia</label>
+            <input type="text" id="sequencia" name="sequencia" class="form-control" placeholder="Sequencia">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="NumNF">NumNF</label>
+            <input type="text" id="nr-nota" name="nr-nota" class="form-control" placeholder="NumNF">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="CodItem">CodItem</label>
+            <input type="text" id="it-codigo" name="it-codigo" class="form-control" placeholder="CodItem">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="ValorDebito">Valor Debito</label>
+            <input type="text" id="vl-debito" name="vl-debito" placeholder="Valor Debito">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="ValorCredito">Valor Credito</label>
+            <input type="text" id="vl-credito" name="vl-credito" class="form-control" placeholder="Valor Credito">
+        </div>
+
+        <div class="form-group">
+
+            <label asp-for="Quantidade">Quantidade</label>
+            <input type="text" id="qt-requisitada" name="qt-requisitada" class="form-control" placeholder="Quantidade">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
